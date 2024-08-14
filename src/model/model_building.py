@@ -58,6 +58,7 @@ def main():
 
         model = train_model(X_train, Y_train, n_estimators)
         save_model(model, model_name)
+        print("Model Trained and Saved Successfully!")
     except Exception as e:
         raise Exception(f"An error ocurred: {e}")
     

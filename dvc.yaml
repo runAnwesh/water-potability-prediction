@@ -17,5 +17,14 @@ stages:
     deps:
     - data/processed
     - src/model/model_building.py
+    params:
+    - model_building.n_estimators
     outs:
     - models/model.pkl
+  model_eval:
+    cmd: python src/model/model_eval.py
+    deps:
+    - models/model.pkl
+    - src/model/model_eval.py
+    metrics:
+    - reports/metrics.json

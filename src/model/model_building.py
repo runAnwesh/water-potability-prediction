@@ -4,6 +4,14 @@ import os
 import pickle
 import yaml
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import GridSearchCV
+"""
+Hyperparameter tuning using GridSearchCV
+
+param_grid = {'max_features': ['sqrt', 'log'], 'criterion': ['gini', 'entropy', 'log_loss']}
+
+
+"""
 
 def load_params(params_path: str) -> int:
     try:
